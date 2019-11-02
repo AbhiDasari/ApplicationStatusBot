@@ -6,7 +6,7 @@ def sender():
     mail.To = '781038@cognizant.com'
     mail.Subject = 'Test Mail'
     mail.Body = 'Test Mail'
-    mail.HTMLBody = '<h2>Hi Sahithi</h2>' #this field is optional
+    mail.HTMLBody = '<h2>the report is in attachments</h2>' #this field is optional
 
     path=os.getcwd()
 #To attach a file to the email (optional):
@@ -15,3 +15,4 @@ def sender():
 
     mail.Send()
     print("Mail Sent")
+

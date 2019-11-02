@@ -1,5 +1,8 @@
 import pandas as pd
 import numpy as np
+import Zipper as zi
+import Mailer as mail
+import Suggester as su
 
 def Generator(filereports):
     
@@ -29,7 +32,11 @@ def Generator(filereports):
             
             temp=pd.concat([temp,temp1])
             temp=temp.dropna()
-    temp.to_csv("pass_data.csv",index=False) 
+    temp.to_csv("pass_data.csv",index=False)
+    zi.zip()
+    mail.sender()
+    su.suggester("pass_data.csv")
+
 def Generatorapp(filereports,choice):
     
     COLUMN_NAMES=['AppName','TCID','STATUS','EXEDATE','PASSED']
@@ -61,4 +68,8 @@ def Generatorapp(filereports,choice):
             temp=pd.concat([temp,temp1])
             temp=temp.dropna()
     
-    temp.to_csv("pass_data.csv",index=False)           
+    temp.to_csv("pass_data.csv",index=False)
+    zi.zip()
+    mail.sender()
+    
+    
